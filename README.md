@@ -9,7 +9,7 @@ Sing terrible song and Nyah
 # Ranger
 Shoot rubberduck arrow
 # Druid
-Heal with mushroom
+Heal with mushroom. Bonk with staff.
 May have ADHD.
 # Wizard
 Fireball
