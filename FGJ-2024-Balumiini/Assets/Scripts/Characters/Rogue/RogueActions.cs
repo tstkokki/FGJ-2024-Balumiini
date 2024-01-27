@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarbarianActions : MonoBehaviour, ICombatActions
+public class RogueActions : MonoBehaviour, ICombatActions
 {
     [SerializeField]
     CombatStats combatStats;
@@ -13,10 +13,12 @@ public class BarbarianActions : MonoBehaviour, ICombatActions
 
     [SerializeField]
     ActionList actions;
+
+
     private void Start()
     {
-        myMovement= GetComponent<CharacterMovement>();
-        primaryAttack= GetComponentInChildren<MeleeAttack>();
+        myMovement = GetComponent<CharacterMovement>();
+        primaryAttack = GetComponentInChildren<MeleeAttack>();
         returnBack = GetComponent<Return>();
     }
 
@@ -26,7 +28,6 @@ public class BarbarianActions : MonoBehaviour, ICombatActions
         actions.Add(primaryAttack);
         actions.Add(returnBack);
     }
-
     public void SecondaryAction()
     {
         throw new System.NotImplementedException();
