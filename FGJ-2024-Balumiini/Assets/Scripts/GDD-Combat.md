@@ -8,6 +8,12 @@
     - same as above
 - AD/LR arrows to switch active party member
 
+## On Attack
+CombatRound
+- Pass attacker and defender into the Primary or Secondary method
+- Handle calculations
+
+
 ## End Combat
 
 When all enemies defeated

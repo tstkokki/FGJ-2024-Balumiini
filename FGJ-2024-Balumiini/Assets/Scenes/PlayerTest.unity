@@ -353,6 +353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1592229702}
+  - component: {fileID: 1592229703}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -376,6 +377,20 @@ Transform:
   - {fileID: 439474078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1592229703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592229701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f91bf753d8f124baa5a4e7e0000400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatStats: {fileID: 11400000, guid: 1a5011fff64edcb448f183c1e283f47f, type: 2}
+  hasActed: {fileID: 11400000, guid: 4aab010301320b3428c9290ddf25ca4e, type: 2}
 --- !u!1 &1757381591
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,8 +578,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8896260354882772645, guid: 8a6e7d714005ce34faeb08119dd667e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 694819189930835360}
   m_SourcePrefab: {fileID: 100100000, guid: 8a6e7d714005ce34faeb08119dd667e7, type: 3}
+--- !u!1 &694819189930835358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8896260354882772645, guid: 8a6e7d714005ce34faeb08119dd667e7, type: 3}
+  m_PrefabInstance: {fileID: 694819189930835357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &694819189930835359 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2056677666919846658, guid: 8a6e7d714005ce34faeb08119dd667e7, type: 3}
+  m_PrefabInstance: {fileID: 694819189930835357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694819189930835358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f9efe138fb34b4095159cfc316b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &694819189930835360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694819189930835358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968d833a3fa80b14c994643522deeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 694819189930835359}
+        m_TargetAssemblyTypeName: ActedColorObserver, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameEvent: {fileID: 11400000, guid: 27dd34af961c8184e881cc958b59af5c, type: 2}
 --- !u!1001 &2386220024845735104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,10 +675,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4997686546123121086, guid: c8fae7bee9926b043b63441cf369ceb3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997686546123121086, guid: c8fae7bee9926b043b63441cf369ceb3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997686546123121086, guid: c8fae7bee9926b043b63441cf369ceb3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997686546123121086, guid: c8fae7bee9926b043b63441cf369ceb3, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6218889058352834952, guid: c8fae7bee9926b043b63441cf369ceb3, type: 3}
       propertyPath: m_Name
       value: Cursor
       objectReference: {fileID: 0}
+    - target: {fileID: 7771174884561551723, guid: c8fae7bee9926b043b63441cf369ceb3, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771174884561551723, guid: c8fae7bee9926b043b63441cf369ceb3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d4f24d7bddf129048b1c48260e1e5eb9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -681,8 +767,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3380316709242566706, guid: b890163960c626e45a587010506f6cfb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3244897490271637045}
   m_SourcePrefab: {fileID: 100100000, guid: b890163960c626e45a587010506f6cfb, type: 3}
+--- !u!1 &3244897490271637043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3380316709242566706, guid: b890163960c626e45a587010506f6cfb, type: 3}
+  m_PrefabInstance: {fileID: 3244897490271637042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3244897490271637044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5503216428301471507, guid: b890163960c626e45a587010506f6cfb, type: 3}
+  m_PrefabInstance: {fileID: 3244897490271637042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244897490271637043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f9efe138fb34b4095159cfc316b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3244897490271637045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244897490271637043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968d833a3fa80b14c994643522deeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3244897490271637044}
+        m_TargetAssemblyTypeName: ActedColorObserver, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameEvent: {fileID: 11400000, guid: 27dd34af961c8184e881cc958b59af5c, type: 2}
 --- !u!1001 &3640474619697064892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -742,8 +875,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7339775824016751034, guid: ab863aff517995c41ab5983c8cdb5e17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3640474619697064895}
   m_SourcePrefab: {fileID: 100100000, guid: ab863aff517995c41ab5983c8cdb5e17, type: 3}
+--- !u!1 &3640474619697064893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7339775824016751034, guid: ab863aff517995c41ab5983c8cdb5e17, type: 3}
+  m_PrefabInstance: {fileID: 3640474619697064892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3640474619697064894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5549427312551825619, guid: ab863aff517995c41ab5983c8cdb5e17, type: 3}
+  m_PrefabInstance: {fileID: 3640474619697064892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3640474619697064893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f9efe138fb34b4095159cfc316b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3640474619697064895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3640474619697064893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968d833a3fa80b14c994643522deeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3640474619697064894}
+        m_TargetAssemblyTypeName: ActedColorObserver, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameEvent: {fileID: 11400000, guid: 27dd34af961c8184e881cc958b59af5c, type: 2}
 --- !u!1001 &3718136481118061947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -800,6 +980,10 @@ PrefabInstance:
       propertyPath: NewTurn
       value: 
       objectReference: {fileID: 11400000, guid: 5d8012c4fc8531c47801d602232f5a1f, type: 2}
+    - target: {fileID: 9107210940162500651, guid: fe089f0d5f492da47a101479c19a2668, type: 3}
+      propertyPath: RefreshParty
+      value: 
+      objectReference: {fileID: 11400000, guid: 27dd34af961c8184e881cc958b59af5c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1037,8 +1221,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1407108449850062574, guid: 59c597b9f6cc20e45be0353a2926f0d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6307424520878426484}
   m_SourcePrefab: {fileID: 100100000, guid: 59c597b9f6cc20e45be0353a2926f0d4, type: 3}
+--- !u!1 &6307424520878426482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1407108449850062574, guid: 59c597b9f6cc20e45be0353a2926f0d4, type: 3}
+  m_PrefabInstance: {fileID: 6307424520878426481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6307424520878426483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1072141996452681180, guid: 59c597b9f6cc20e45be0353a2926f0d4, type: 3}
+  m_PrefabInstance: {fileID: 6307424520878426481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307424520878426482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f9efe138fb34b4095159cfc316b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6307424520878426484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307424520878426482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968d833a3fa80b14c994643522deeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6307424520878426483}
+        m_TargetAssemblyTypeName: ActedColorObserver, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameEvent: {fileID: 11400000, guid: 27dd34af961c8184e881cc958b59af5c, type: 2}
 --- !u!1001 &6430097753458731177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1094,8 +1325,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534190540179412593, guid: 916c1c5edcde05d40b312440f2ba6a5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6430097753458731180}
   m_SourcePrefab: {fileID: 100100000, guid: 916c1c5edcde05d40b312440f2ba6a5c, type: 3}
+--- !u!1 &6430097753458731178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4534190540179412593, guid: 916c1c5edcde05d40b312440f2ba6a5c, type: 3}
+  m_PrefabInstance: {fileID: 6430097753458731177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6430097753458731179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5657605849364185809, guid: 916c1c5edcde05d40b312440f2ba6a5c, type: 3}
+  m_PrefabInstance: {fileID: 6430097753458731177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430097753458731178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f9efe138fb34b4095159cfc316b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6430097753458731180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430097753458731178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968d833a3fa80b14c994643522deeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6430097753458731179}
+        m_TargetAssemblyTypeName: ActedColorObserver, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameEvent: {fileID: 11400000, guid: 27dd34af961c8184e881cc958b59af5c, type: 2}
 --- !u!1001 &6620895668277551941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1155,8 +1433,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6339521166768364844, guid: 9e44388b2b9a32047ba4cb3eb5731715, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6620895668277551944}
   m_SourcePrefab: {fileID: 100100000, guid: 9e44388b2b9a32047ba4cb3eb5731715, type: 3}
+--- !u!1 &6620895668277551942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6339521166768364844, guid: 9e44388b2b9a32047ba4cb3eb5731715, type: 3}
+  m_PrefabInstance: {fileID: 6620895668277551941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6620895668277551943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5284730342187552841, guid: 9e44388b2b9a32047ba4cb3eb5731715, type: 3}
+  m_PrefabInstance: {fileID: 6620895668277551941}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620895668277551942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f9efe138fb34b4095159cfc316b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6620895668277551944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620895668277551942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968d833a3fa80b14c994643522deeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6620895668277551943}
+        m_TargetAssemblyTypeName: ActedColorObserver, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameEvent: {fileID: 11400000, guid: 27dd34af961c8184e881cc958b59af5c, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
