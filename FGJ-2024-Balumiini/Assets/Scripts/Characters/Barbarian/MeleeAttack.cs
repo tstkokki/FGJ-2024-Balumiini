@@ -7,11 +7,11 @@ public class MeleeAttack : MonoBehaviour, ITurnAction
     public bool IsDone { get; set; }
 
     Animator animator;
-
+    public string animationName = "BarbAttack";
     public void Execute()
     {
         IsDone = false;
-        animator.Play("BarbAttack");
+        animator.Play(animationName);
     }
 
     public void Finished()
