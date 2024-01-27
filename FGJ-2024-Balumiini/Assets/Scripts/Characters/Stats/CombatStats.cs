@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Combat Stats", menuName = "Custom/Stats/Combat")]
 public class CombatStats : ScriptableObject
 {
-    [SerializeField]
-    Stats BaseStats;
+    
+    public Stats BaseStats;
 
     [Space]
     [Header("Actions")]
