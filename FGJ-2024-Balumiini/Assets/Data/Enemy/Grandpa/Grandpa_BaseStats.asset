@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480954a3b69654a4da8a9466a88d6aaf, type: 3}
+  m_Name: Grandpa_BaseStats
+  m_EditorClassIdentifier: 
+  Name: Grandpa
+  Level:
+    UseConstant: 1
+    ConstantValue: 1
+    Variable: {fileID: 0}
+  Hp: {fileID: 11400000, guid: 5366f22f8c6e8bf4e864d136a17a27d6, type: 2}
+  MaxHp:
+    UseConstant: 1
+    ConstantValue: 6
+    Variable: {fileID: 0}
+  Atk:
+    UseConstant: 1
+    ConstantValue: 2
+    Variable: {fileID: 0}
+  Def:
+    UseConstant: 1
+    ConstantValue: 2
+    Variable: {fileID: 0}
+  HpGrowth:
+    UseConstant: 1
+    ConstantValue: 1
+    Variable: {fileID: 0}
+  AtkGrowth:
+    UseConstant: 1
+    ConstantValue: 1
+    Variable: {fileID: 0}
+  DefGrowth:
+    UseConstant: 1
+    ConstantValue: 1
+    Variable: {fileID: 0}

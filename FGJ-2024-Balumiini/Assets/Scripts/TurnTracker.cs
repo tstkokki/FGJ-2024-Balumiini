@@ -9,14 +9,22 @@ public class TurnTracker : MonoBehaviour
 
     [SerializeField]
     GameEvent NewTurn;
+    
+    [SerializeField]
+    GameEvent RefreshParty;
+
+    
+
     public void ExecuteTurn()
     {
+        
         StartCoroutine(ExecuteActions());
     }
 
     IEnumerator ExecuteActions()
     {
-       
+        yield return new WaitForEndOfFrame();
+        RefreshParty.Raise();
         // Assume actions are stored in a list
         //var actions = new List<ITurnAction>
         //{

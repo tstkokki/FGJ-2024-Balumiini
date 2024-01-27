@@ -18,11 +18,11 @@ public class CombatStats : ScriptableObject
 
     public int PrimaryAttack()
     {
-        return Mathf.FloorToInt(PrimaryActionMultiplier.Value * BaseStats.Atk.Value);
+        return Mathf.FloorToInt(PrimaryActionMultiplier.Value * (BaseStats.LevelledAtk));
     }
 
     public int SecondaryAttack()
     {
-        return Mathf.FloorToInt(SecondaryActionMultiplier.Value * BaseStats.Atk.Value);
+        return Mathf.FloorToInt(SecondaryActionMultiplier.Value * BaseStats.LevelledAtk);
     }
 }

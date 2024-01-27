@@ -34,6 +34,11 @@ public class ActedColorObserver : MonoBehaviour
         
     }
 
+    public void ResetColor()
+    {
+        cat.color = DefaultColor;
+    }
+
     public void ChangeColor()
     {
         cat.color = HasActed.Value ? HasActedColor : DefaultColor;
