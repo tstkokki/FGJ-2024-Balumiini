@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480954a3b69654a4da8a9466a88d6aaf, type: 3}
+  m_Name: BarbarianBaseStats
+  m_EditorClassIdentifier: 
+  Name: Barpurrian
+  Level:
+    UseConstant: 1
+    ConstantValue: 1
+    Variable: {fileID: 11400000, guid: 4c2cca08c87b32f43bc9a529a0e035cb, type: 2}
+  Hp: {fileID: 11400000, guid: ef786e8dbd5a5034f86b4beedcc37322, type: 2}
+  MaxHp:
+    UseConstant: 0
+    ConstantValue: 4
+    Variable: {fileID: 11400000, guid: cfc9a611b6586ed43ae4b0f6e47ed2a8, type: 2}
+  Atk:
+    UseConstant: 1
+    ConstantValue: 2
+    Variable: {fileID: 11400000, guid: cdce5c8fc918e5a4b947ddb211bcbe7c, type: 2}
+  Def:
+    UseConstant: 1
+    ConstantValue: 2
+    Variable: {fileID: 11400000, guid: 185d73a5ad7958d4eb7120ca2412db00, type: 2}
+  HpGrowth:
+    UseConstant: 1
+    ConstantValue: 4
+    Variable: {fileID: 0}
+  AtkGrowth:
+    UseConstant: 1
+    ConstantValue: 1
+    Variable: {fileID: 0}
+  DefGrowth:
+    UseConstant: 1
+    ConstantValue: 1
+    Variable: {fileID: 0}

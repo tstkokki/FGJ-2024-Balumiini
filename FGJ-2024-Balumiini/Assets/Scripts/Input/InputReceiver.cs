@@ -6,6 +6,35 @@ using UnityEngine.InputSystem;
 
 public class InputReceiver : MonoBehaviour, IInputReceiver
 {
+    public BarbarianActions barbarian;
+
+    [SerializeField]
+    GameEvent ExecuteTurn;
+    public void OnPrimary(InputAction.CallbackContext ctx)
+    {
+        if (ctx.PressPerformed())
+        {
+            Debug.Log("Primary pressed");
+            barbarian.PrimaryAction();
+        }
+    }
+
+    public void OnSecondary(InputAction.CallbackContext ctx)
+    {
+        if (ctx.PressPerformed())
+        {
+            Debug.Log("Secondary pressed");
+        }
+    }
+
+    public void OnTertiary(InputAction.CallbackContext ctx)
+    {
+        if (ctx.PressPerformed())
+        {
+            ExecuteTurn.Raise();
+        }
+    }
+
     public void OnBack(InputAction.CallbackContext ctx)
     {
         if (ctx.PressPerformed())
@@ -22,6 +51,18 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
             Debug.Log($"Horizontal {ctx.ReadValue<float>()} pressed");
         }
     }
+
+
+
+    public void OnVertical(InputAction.CallbackContext ctx)
+    {
+        var value = ctx.ReadValue<float>();
+        if (ctx.performed && (value == -1 || value == 1))
+        {
+            Debug.Log($"Vertical {ctx.ReadValue<float>()} pressed");
+        }
+    }
+
 
     public void OnParty1(InputAction.CallbackContext ctx)
     {
@@ -71,38 +112,6 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
         }
     }
 
-    public void OnPrimary(InputAction.CallbackContext ctx)
-    {
-        if (ctx.PressPerformed())
-        {
-            Debug.Log("Primary pressed");
-        }
-    }
-
-    public void OnSecondary(InputAction.CallbackContext ctx)
-    {
-        if (ctx.PressPerformed())
-        {
-            Debug.Log("Secondary pressed");
-        }
-    }
-
-    public void OnTertiary(InputAction.CallbackContext ctx)
-    {
-        if (ctx.PressPerformed())
-        {
-            Debug.Log("Tertiary pressed");
-        }
-    }
-
-    public void OnVertical(InputAction.CallbackContext ctx)
-    {
-        var value = ctx.ReadValue<float>();
-        if (ctx.performed && (value == -1 || value == 1))
-        {
-            Debug.Log($"Vertical {ctx.ReadValue<float>()} pressed");
-        }
-    }
 
     // Start is called before the first frame update
     void Start()
