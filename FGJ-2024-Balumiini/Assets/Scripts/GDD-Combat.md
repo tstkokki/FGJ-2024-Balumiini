@@ -7,3 +7,12 @@
 - E/Right mouse to pergotm secondary
     - same as above
 - AD/LR arrows to switch active party member
+
+## End Combat
+
+When all enemies defeated
+- Stop combat
+- Proceed to next floor
+- Refresh party
+- Add new party member if any
+- Level up

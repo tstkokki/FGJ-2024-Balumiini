@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatStats: {fileID: 11400000, guid: 50141b7ef2fea0e4c9b717f9f97812dc, type: 2}
+  hasActed: {fileID: 11400000, guid: 94923e686d7fbb5439d6e3c471ad13e0, type: 2}
 --- !u!114 &6225608641797614418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +103,7 @@ GameObject:
   - component: {fileID: 5563930985115938057}
   - component: {fileID: 7741956594022894172}
   - component: {fileID: 1735578240713245336}
+  - component: {fileID: 5657605849364185809}
   m_Layer: 0
   m_Name: Barbarian cat clear
   m_TagString: Untagged
@@ -210,3 +212,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationName: BarbAttack
+--- !u!114 &5657605849364185809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534190540179412593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f9efe138fb34b4095159cfc316b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HasActed: {fileID: 11400000, guid: 94923e686d7fbb5439d6e3c471ad13e0, type: 2}
+  HasActedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  DefaultColor: {r: 1, g: 1, b: 1, a: 1}

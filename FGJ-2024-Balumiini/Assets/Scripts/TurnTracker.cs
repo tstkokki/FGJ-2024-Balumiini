@@ -6,6 +6,9 @@ public class TurnTracker : MonoBehaviour
 
     [SerializeField]
     ActionList actions;
+
+    [SerializeField]
+    GameEvent NewTurn;
     public void ExecuteTurn()
     {
         StartCoroutine(ExecuteActions());
@@ -37,6 +40,7 @@ public class TurnTracker : MonoBehaviour
         // All actions have been executed
         Debug.Log("Turn is complete");
         actions.List.Clear();
+        NewTurn.Raise();
     }
 }
 

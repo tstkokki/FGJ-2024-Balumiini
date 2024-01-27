@@ -9,18 +9,15 @@ public class PartyAction : MonoBehaviour
 
     [SerializeField]
     ActionList Actions;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    private void Awake()
+    {
+        Party.Refresh();
     }
 
     public void ResetTurn()
     {
-        foreach (var member in Party.Members)
-        {
-            member.HasActed = false;
-        }
+        Party.Refresh();
     }
 
     public bool AllActed()
