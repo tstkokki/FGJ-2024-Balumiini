@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95b2ed1abe6fa6149a35bcd1cdc0fdb4, type: 3}
-  m_Name: Barb_Combat
+  m_Name: Ranger_Combat
   m_EditorClassIdentifier: 
-  BaseStats: {fileID: 11400000, guid: b5f56934f39e8664396934575a33d1b1, type: 2}
+  BaseStats: {fileID: 11400000, guid: 4e6409a60f2a7d94aa5509f4d8a336df, type: 2}
   PrimaryActionMultiplier:
     UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 11400000, guid: 4ff094c853dccf34ba479161892d60b9, type: 2}
+    Variable: {fileID: 11400000, guid: d29e4ce6d1dd3d84c994d3b2d56ef4ee, type: 2}
   SecondaryActionMultiplier:
     UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 11400000, guid: 71e230341822bd14b9c0cbde189b57e7, type: 2}
+    Variable: {fileID: 11400000, guid: efdeb29870219cd49b016ef726bfc0c6, type: 2}

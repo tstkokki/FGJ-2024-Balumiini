@@ -11,7 +11,9 @@ public class RogueActions : MonoBehaviour, ICombatActions
     MeleeAttack primaryAttack;
     Return returnBack;
 
-    public bool HasActed { get; set ; }
+    [SerializeField]
+    BooleanVariable hasActed;
+    public bool HasActed { get => hasActed.Value; set => hasActed.Value = value; }
 
     private void Start()
     {

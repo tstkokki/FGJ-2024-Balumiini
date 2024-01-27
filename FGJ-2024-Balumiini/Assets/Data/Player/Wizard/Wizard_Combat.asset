@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95b2ed1abe6fa6149a35bcd1cdc0fdb4, type: 3}
-  m_Name: Barb_Combat
+  m_Name: Wizard_Combat
   m_EditorClassIdentifier: 
-  BaseStats: {fileID: 11400000, guid: b5f56934f39e8664396934575a33d1b1, type: 2}
+  BaseStats: {fileID: 11400000, guid: c2f7eda98aadab24f9a9eb217b271b57, type: 2}
   PrimaryActionMultiplier:
     UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 11400000, guid: 4ff094c853dccf34ba479161892d60b9, type: 2}
+    Variable: {fileID: 11400000, guid: ed6899ed269258d4fab3ef76365f9794, type: 2}
   SecondaryActionMultiplier:
     UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 11400000, guid: 71e230341822bd14b9c0cbde189b57e7, type: 2}
+    Variable: {fileID: 11400000, guid: cdc4a4edf7b549d46828d99ef4df4c25, type: 2}

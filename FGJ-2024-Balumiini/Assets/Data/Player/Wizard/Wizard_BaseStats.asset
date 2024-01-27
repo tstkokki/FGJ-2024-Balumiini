@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 480954a3b69654a4da8a9466a88d6aaf, type: 3}
-  m_Name: BarbarianBaseStats
+  m_Name: Wizard_BaseStats
   m_EditorClassIdentifier: 
-  Name: Barpurrian
+  Name: Wizard
   Level:
     UseConstant: 0
     ConstantValue: 1
     Variable: {fileID: 11400000, guid: 4c2cca08c87b32f43bc9a529a0e035cb, type: 2}
-  Hp: {fileID: 11400000, guid: ef786e8dbd5a5034f86b4beedcc37322, type: 2}
+  Hp: {fileID: 11400000, guid: cb407d54958d07242b3f77218620e490, type: 2}
   MaxHp:
     UseConstant: 0
-    ConstantValue: 4
-    Variable: {fileID: 11400000, guid: cfc9a611b6586ed43ae4b0f6e47ed2a8, type: 2}
+    ConstantValue: 3
+    Variable: {fileID: 11400000, guid: 6db6590ed92a1f54190ff633ed10e166, type: 2}
   Atk:
     UseConstant: 0
-    ConstantValue: 2
-    Variable: {fileID: 11400000, guid: cdce5c8fc918e5a4b947ddb211bcbe7c, type: 2}
+    ConstantValue: 1
+    Variable: {fileID: 11400000, guid: 273e7823d5e8bdc4982c91102c3421ff, type: 2}
   Def:
     UseConstant: 0
-    ConstantValue: 2
-    Variable: {fileID: 11400000, guid: 185d73a5ad7958d4eb7120ca2412db00, type: 2}
+    ConstantValue: 1
+    Variable: {fileID: 11400000, guid: 03a012cf347107d4e9370d761da7a5d3, type: 2}
   HpGrowth:
     UseConstant: 0
-    ConstantValue: 4
-    Variable: {fileID: 11400000, guid: b0e687dec6729df47ae5af5bf1bd0857, type: 2}
+    ConstantValue: 2
+    Variable: {fileID: 11400000, guid: 3309e0cdda12f5a4fb723933d99890b4, type: 2}
   AtkGrowth:
     UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 11400000, guid: 02595b36e84f5134dbf61e2c54fe69c7, type: 2}
+    Variable: {fileID: 11400000, guid: 3309e0cdda12f5a4fb723933d99890b4, type: 2}
   DefGrowth:
     UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 11400000, guid: 3309e0cdda12f5a4fb723933d99890b4, type: 2}
+    Variable: {fileID: 11400000, guid: c5d9a03db701bae498822182aac54c4e, type: 2}
