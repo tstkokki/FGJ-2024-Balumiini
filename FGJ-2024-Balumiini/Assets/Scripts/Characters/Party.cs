@@ -5,42 +5,48 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Party", menuName = "Custom/Party")]
 public class Party : ScriptableObject
 {
-    public List<ICombatActions> members = new();
-    int currentMember = 0;
+    public List<ICombatActions> Members = new();
+    [SerializeField]
+    IntVariable CurrentMember;
+
+    public ICombatActions Current
+    {
+        get { return Members[CurrentMember.Value]; }
+    }
 
     private void OnEnable()
     {
-        members.Clear();
+        Members.Clear();
     }
 
     private void OnDisable()
     {
-        members.Clear();
+        Members.Clear();
     }
 
     public void Next()
     {
-        currentMember = (currentMember + 1) % members.Count;
+        CurrentMember.Value = (CurrentMember.Value + 1) % Members.Count;
     }
     public void Previous()
     {
-        currentMember = (currentMember - 1 + members.Count) % members.Count;
+        CurrentMember.Value = (CurrentMember.Value - 1 + Members.Count) % Members.Count;
     }
 
     public void Add(ICombatActions member)
     {
-        if (!members.Contains(member))
+        if (!Members.Contains(member))
         {
-            members.Add(member);
+            Members.Add(member);
 
         }
     }
 
     public void Remove(ICombatActions member)
     {
-        if (members.Contains(member))
+        if (Members.Contains(member))
         {
-            members.Remove(member);
+            Members.Remove(member);
         }
     }
 }

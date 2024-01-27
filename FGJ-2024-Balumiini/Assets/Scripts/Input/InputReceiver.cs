@@ -6,16 +6,30 @@ using UnityEngine.InputSystem;
 
 public class InputReceiver : MonoBehaviour, IInputReceiver
 {
-    public BarbarianActions barbarian;
 
+    PartyAction party;
     [SerializeField]
     GameEvent ExecuteTurn;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+#if UNITY_EDITOR
+        Debug.unityLogger.logEnabled = true;
+#else
+        Debug.unityLogger.logEnabled = false;
+#endif
+        party = GetComponent<PartyAction>();
+    }
     public void OnPrimary(InputAction.CallbackContext ctx)
     {
         if (ctx.PressPerformed())
         {
             Debug.Log("Primary pressed");
-            barbarian.PrimaryAction();
+            party.AddToTurn();
+            if (party.AllActed())
+                ExecuteTurn.Raise();
         }
     }
 
@@ -49,6 +63,10 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
         if (ctx.performed && (value == -1 || value == 1))
         {
             Debug.Log($"Horizontal {ctx.ReadValue<float>()} pressed");
+            if (value == 1)
+                party.SelectPrevious();
+            else
+                party.SelectNext();
         }
     }
 
@@ -113,15 +131,5 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
     }
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-#if UNITY_EDITOR
-        Debug.unityLogger.logEnabled = true;
-#else
-        Debug.unityLogger.logEnabled = false;
-#endif
-
-    }
 
 }
