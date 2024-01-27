@@ -460,6 +460,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 28.16}
+--- !u!1 &1999358810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2733504204848015068, guid: f3488c0656436694e96b3289b833e621, type: 3}
+  m_PrefabInstance: {fileID: 4023544514649165823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1999358811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6367608322006663077, guid: f3488c0656436694e96b3289b833e621, type: 3}
+  m_PrefabInstance: {fileID: 4023544514649165823}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999358810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1c04f6eabdc2c40bce14ab158cc896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1999358815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999358810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968d833a3fa80b14c994643522deeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1999358811}
+        m_TargetAssemblyTypeName: PartyAction, Assembly-CSharp
+        m_MethodName: ResetTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameEvent: {fileID: 11400000, guid: 5d8012c4fc8531c47801d602232f5a1f, type: 2}
 --- !u!1001 &694819189930835357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -471,6 +515,10 @@ PrefabInstance:
     - target: {fileID: 2221409063610813958, guid: 8a6e7d714005ce34faeb08119dd667e7, type: 3}
       propertyPath: m_Name
       value: Ranger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221409063610813958, guid: 8a6e7d714005ce34faeb08119dd667e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3686158862627606872, guid: 8a6e7d714005ce34faeb08119dd667e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -586,10 +634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bard
       objectReference: {fileID: 0}
-    - target: {fileID: 686313796495921556, guid: b890163960c626e45a587010506f6cfb, type: 3}
-      propertyPath: HomePosition
-      value: 
-      objectReference: {fileID: 11400000, guid: b8695173bfc98a24b90ea2bd730d3a75, type: 2}
+    - target: {fileID: 314401562616516583, guid: b890163960c626e45a587010506f6cfb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6663603755875743468, guid: b890163960c626e45a587010506f6cfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.69
@@ -630,10 +678,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7711752410597795205, guid: b890163960c626e45a587010506f6cfb, type: 3}
-      propertyPath: combatStats
-      value: 
-      objectReference: {fileID: 11400000, guid: c6846da268086fd4297e5a109649f0ff, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -647,13 +691,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5676070981691366651, guid: ab863aff517995c41ab5983c8cdb5e17, type: 3}
-      propertyPath: combatStats
-      value: 
-      objectReference: {fileID: 11400000, guid: 8934508307ae45a4591202d99d579c71, type: 2}
     - target: {fileID: 7807446596777826559, guid: ab863aff517995c41ab5983c8cdb5e17, type: 3}
       propertyPath: m_Name
       value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807446596777826559, guid: ab863aff517995c41ab5983c8cdb5e17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8493440864985990651, guid: ab863aff517995c41ab5983c8cdb5e17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -752,6 +796,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9107210940162500651, guid: fe089f0d5f492da47a101479c19a2668, type: 3}
+      propertyPath: NewTurn
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d8012c4fc8531c47801d602232f5a1f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -820,7 +868,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2733504204848015068, guid: f3488c0656436694e96b3289b833e621, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1999358815}
   m_SourcePrefab: {fileID: 100100000, guid: f3488c0656436694e96b3289b833e621, type: 3}
 --- !u!1001 &4465994070006004502
 PrefabInstance:
@@ -979,6 +1030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Druid
       objectReference: {fileID: 0}
+    - target: {fileID: 4249969694757801205, guid: 59c597b9f6cc20e45be0353a2926f0d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -992,10 +1047,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2413634212980669208, guid: 916c1c5edcde05d40b312440f2ba6a5c, type: 3}
-      propertyPath: hasActed
-      value: 
-      objectReference: {fileID: 11400000, guid: 94923e686d7fbb5439d6e3c471ad13e0, type: 2}
     - target: {fileID: 4313431564360935576, guid: 916c1c5edcde05d40b312440f2ba6a5c, type: 3}
       propertyPath: m_Name
       value: Barbarian
@@ -1097,10 +1148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rogue
       objectReference: {fileID: 0}
-    - target: {fileID: 6311616053484673467, guid: 9e44388b2b9a32047ba4cb3eb5731715, type: 3}
-      propertyPath: HomePosition
-      value: 
-      objectReference: {fileID: 11400000, guid: 87e6ef8d58a06eb43bb8d83dd1143711, type: 2}
+    - target: {fileID: 2234677371645062141, guid: 9e44388b2b9a32047ba4cb3eb5731715, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

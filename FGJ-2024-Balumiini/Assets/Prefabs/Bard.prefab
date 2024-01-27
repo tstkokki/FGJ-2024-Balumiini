@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f91bf753d8f124baa5a4e7e0000400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatStats: {fileID: 11400000, guid: 50141b7ef2fea0e4c9b717f9f97812dc, type: 2}
+  combatStats: {fileID: 11400000, guid: c6846da268086fd4297e5a109649f0ff, type: 2}
+  hasActed: {fileID: 11400000, guid: ce41420f5f53a88438b57b518f6177a2, type: 2}
 --- !u!114 &7393020510931376917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d536c56497031449ade1e2e2e13736b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HomePosition: {fileID: 11400000, guid: 87e6ef8d58a06eb43bb8d83dd1143711, type: 2}
+  HomePosition: {fileID: 11400000, guid: b8695173bfc98a24b90ea2bd730d3a75, type: 2}
   speed: 8
 --- !u!1 &3380316709242566706
 GameObject:
@@ -102,6 +103,7 @@ GameObject:
   - component: {fileID: 4543891408517309202}
   - component: {fileID: 6628830412532145420}
   - component: {fileID: 6460560596067957429}
+  - component: {fileID: 5503216428301471507}
   m_Layer: 0
   m_Name: Bard cat clear
   m_TagString: Untagged
@@ -210,3 +212,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationName: BarbAttack
+--- !u!114 &5503216428301471507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3380316709242566706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f9efe138fb34b4095159cfc316b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HasActed: {fileID: 11400000, guid: ce41420f5f53a88438b57b518f6177a2, type: 2}
+  HasActedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  DefaultColor: {r: 1, g: 1, b: 1, a: 1}

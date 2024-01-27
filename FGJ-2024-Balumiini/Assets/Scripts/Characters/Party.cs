@@ -9,6 +9,15 @@ public class Party : ScriptableObject
     [SerializeField]
     IntVariable CurrentMember;
 
+    public void Refresh()
+    {
+        CurrentMember.Value = 0;
+        foreach (var member in Members)
+        {
+            member.HasActed = false;
+        }
+    }
+
     public ICombatActions Current
     {
         get { return Members[CurrentMember.Value]; }
@@ -16,11 +25,13 @@ public class Party : ScriptableObject
 
     private void OnEnable()
     {
+        CurrentMember.Value = 0;
         Members.Clear();
     }
 
     private void OnDisable()
     {
+        CurrentMember.Value = 0;
         Members.Clear();
     }
 
