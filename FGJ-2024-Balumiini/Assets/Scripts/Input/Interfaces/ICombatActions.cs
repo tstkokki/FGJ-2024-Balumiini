@@ -4,7 +4,9 @@ using UnityEngine;
 
 public interface ICombatActions 
 {
-    void PrimaryAction();
-    void SecondaryAction();
-    void TertiaryAction();
+    public bool HasActed { get; set; }
+
+    void PrimaryAction(ActionList actions);
+    void SecondaryAction(ActionList actions);
+    void TertiaryAction(ActionList actions);
 }

@@ -11,9 +11,7 @@ public class RogueActions : MonoBehaviour, ICombatActions
     MeleeAttack primaryAttack;
     Return returnBack;
 
-    [SerializeField]
-    ActionList actions;
-
+    public bool HasActed { get; set ; }
 
     private void Start()
     {
@@ -22,18 +20,19 @@ public class RogueActions : MonoBehaviour, ICombatActions
         returnBack = GetComponent<Return>();
     }
 
-    public void PrimaryAction()
+    public void PrimaryAction(ActionList actions)
     {
         actions.Add(myMovement);
         actions.Add(primaryAttack);
         actions.Add(returnBack);
+        HasActed = true;
     }
-    public void SecondaryAction()
+    public void SecondaryAction(ActionList actions)
     {
         throw new System.NotImplementedException();
     }
 
-    public void TertiaryAction()
+    public void TertiaryAction(ActionList actions)
     {
         throw new System.NotImplementedException();
     }

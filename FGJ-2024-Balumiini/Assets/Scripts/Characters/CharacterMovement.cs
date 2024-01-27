@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour, ITurnAction
 {
-    public Vector3Variable HomePosition;
+    
     public Vector3Variable TargetPosition;
 
     public float speed = 1f;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8166896599734292877}
   - component: {fileID: 2877482307746249358}
   - component: {fileID: 1482812829394429711}
+  - component: {fileID: 6367608322006663077}
   m_Layer: 0
   m_Name: PlayerControl
   m_TagString: Untagged
@@ -267,3 +268,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc4730a105f20446841de257af45bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExecuteTurn: {fileID: 11400000, guid: 3a82c9167d83f2144a234bc5515f5bea, type: 2}
+--- !u!114 &6367608322006663077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2733504204848015068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1c04f6eabdc2c40bce14ab158cc896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  party: {fileID: 11400000, guid: a253a6f0c1111b84db806c6914c0058f, type: 2}
+  actions: {fileID: 11400000, guid: 6fe387ba6668808488e851df28359c3d, type: 2}
