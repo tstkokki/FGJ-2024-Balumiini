@@ -12,8 +12,17 @@ public class CharacterMovement : MonoBehaviour, ITurnAction
 
     public bool IsDone { get; set; }
 
+    [SerializeField]
+    IntVariable CurrentMember;
+
+    public ICombatActions Me;
+
     public void Move()
     {
+        if(Me != null && CurrentMember != null)
+        {
+            CurrentMember.Value = Me.Character.BaseStats.PartySlot-1;
+        }
         IsDone = false;
         StopAllCoroutines();
         StartCoroutine(MoveToTarget());

@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface ICombatRound
 {
-    void HandlePrimary(/*add attacker and defender to access their stats*/);
+    void HandlePrimary(CombatStats attacker, CombatStats defender);
+    void HandleSecondary(CombatStats attacker, CombatStats defender);
 }

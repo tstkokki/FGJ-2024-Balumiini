@@ -14,6 +14,7 @@ public class RogueActions : MonoBehaviour, ICombatActions
     [SerializeField]
     BooleanVariable hasActed;
     public bool HasActed { get => hasActed.Value; set => hasActed.Value = value; }
+    public CombatStats Character { get => combatStats; }
 
     private void Start()
     {
@@ -39,4 +40,8 @@ public class RogueActions : MonoBehaviour, ICombatActions
         throw new System.NotImplementedException();
     }
 
+    public void SetCurrentMember(IntVariable currentMember)
+    {
+        throw new System.NotImplementedException();
+    }
 }

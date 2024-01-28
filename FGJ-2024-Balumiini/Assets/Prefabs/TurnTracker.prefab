@@ -46,6 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions: {fileID: 11400000, guid: 6fe387ba6668808488e851df28359c3d, type: 2}
+  NewTurn: {fileID: 11400000, guid: 5d8012c4fc8531c47801d602232f5a1f, type: 2}
+  RefreshParty: {fileID: 11400000, guid: 27dd34af961c8184e881cc958b59af5c, type: 2}
+  BattleRecord: {fileID: 0}
+  PlayerPhase: {fileID: 0}
+  EnemyPhase: {fileID: 0}
+  EndOfBattle: {fileID: 0}
 --- !u!114 &6059947372603702602
 MonoBehaviour:
   m_ObjectHideFlags: 0

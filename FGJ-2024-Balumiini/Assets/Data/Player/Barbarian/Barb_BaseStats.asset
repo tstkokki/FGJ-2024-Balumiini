@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 480954a3b69654a4da8a9466a88d6aaf, type: 3}
-  m_Name: BarbarianBaseStats
+  m_Name: Barb_BaseStats
   m_EditorClassIdentifier: 
   Name: Barpurrian
   Level:
     UseConstant: 0
     ConstantValue: 1
     Variable: {fileID: 11400000, guid: 4c2cca08c87b32f43bc9a529a0e035cb, type: 2}
+  Icon: {fileID: 21300000, guid: 57c723c14259bb54589936190a6ed347, type: 3}
+  PartySlot: 1
   Hp: {fileID: 11400000, guid: ef786e8dbd5a5034f86b4beedcc37322, type: 2}
   MaxHp:
     UseConstant: 0

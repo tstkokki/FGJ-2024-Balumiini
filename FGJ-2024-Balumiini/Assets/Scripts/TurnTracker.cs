@@ -13,13 +13,31 @@ public class TurnTracker : MonoBehaviour
     [SerializeField]
     GameEvent RefreshParty;
 
-    
+    [Space]
+    [SerializeField]
+    BattleRecord BattleRecord;
+
+    [SerializeField]
+    BattleState PlayerPhase;
+
+    [SerializeField]
+    BattleState EnemyPhase;
+
+    [SerializeField]
+    BattleState EndOfBattle;
+
+    private void Awake()
+    {
+        BattleRecord.CurrentState = PlayerPhase;
+    }
 
     public void ExecuteTurn()
     {
         
         StartCoroutine(ExecuteActions());
     }
+
+   
 
     IEnumerator ExecuteActions()
     {
@@ -43,12 +61,25 @@ public class TurnTracker : MonoBehaviour
 
             // Wait for the action to finish before moving to the next one
             yield return new WaitUntil(() => action.IsDone);
+
+            if (BattleRecord.CurrentState == EndOfBattle)
+                break;
         }
 
         // All actions have been executed
         Debug.Log("Turn is complete");
         actions.List.Clear();
+        ChangePhase();
+
         NewTurn.Raise();
+    }
+
+    private void ChangePhase()
+    {
+        if (BattleRecord.CurrentState == PlayerPhase)
+            BattleRecord.CurrentState = EnemyPhase;
+        else if (BattleRecord.CurrentState == EnemyPhase)
+            BattleRecord.CurrentState = PlayerPhase;
     }
 }
 

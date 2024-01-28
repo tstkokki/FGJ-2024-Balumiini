@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3368264212261143917}
   - component: {fileID: 655755797614594234}
   - component: {fileID: 1072141996452681180}
+  - component: {fileID: 211048113601437620}
   m_Layer: 0
   m_Name: Druid cat clear
   m_TagString: Untagged
@@ -121,6 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationName: BarbAttack
+  dealDamage: {fileID: 0}
+  TargetParty: {fileID: 0}
+  Me: {fileID: 0}
 --- !u!114 &1072141996452681180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +140,34 @@ MonoBehaviour:
   HasActed: {fileID: 11400000, guid: 09027f5cb62667149896c0daba991189, type: 2}
   HasActedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   DefaultColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &211048113601437620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407108449850062574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968d833a3fa80b14c994643522deeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1072141996452681180}
+        m_TargetAssemblyTypeName: ActedColorObserver, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameEvent: {fileID: 11400000, guid: 27dd34af961c8184e881cc958b59af5c, type: 2}
 --- !u!1 &4249969694757801205
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2225787105898582200
 Transform:
   m_ObjectHideFlags: 0
