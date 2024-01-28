@@ -10,6 +10,9 @@ public class PartyAction : MonoBehaviour
     [SerializeField]
     ActionList Actions;
 
+    [SerializeField]
+    GameEvent PartyWiped;
+
     private void Awake()
     {
         Party.Refresh();
@@ -30,6 +33,17 @@ public class PartyAction : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public void CheckPartyHp()
+    {
+        foreach (var member in Party.Members)
+        {
+            if (member.Character.BaseStats.Hp.Value > 0)
+                return;
+        }
+        if (PartyWiped != null)
+            PartyWiped.Raise();
     }
 
     public void AddToTurn()

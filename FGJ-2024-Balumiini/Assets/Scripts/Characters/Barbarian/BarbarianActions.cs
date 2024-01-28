@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarbarianActions : MonoBehaviour, ICombatActions
+public class BarbarianActions : MonoBehaviour, ICombatActions, ISoundEffect
 {
     [SerializeField]
     CombatStats combatStats;
@@ -12,12 +12,23 @@ public class BarbarianActions : MonoBehaviour, ICombatActions
     Return returnBack;
 
     [SerializeField]
+    ParticleSystem meow;
+
+    [SerializeField]
     BooleanVariable hasActed;
     public bool HasActed { get => hasActed.Value; set => hasActed.Value = value; }
 
     public CombatStats Character => combatStats;
 
     IntVariable CurrentMember { get; set; }
+
+    [SerializeField]
+    SoundPlayer player;
+
+    [SerializeField]
+    SoundClip effect;
+    public SoundPlayer Player { get => player; }
+    public SoundClip Effect { get => effect; }
 
     private void Start()
     {
@@ -30,6 +41,9 @@ public class BarbarianActions : MonoBehaviour, ICombatActions
 
     public void PrimaryAction(ActionList actions)
     {
+        PlayParticle();
+        PlayEffect();
+
         actions.Add(myMovement);
         actions.Add(primaryAttack);
         actions.Add(returnBack);
@@ -49,5 +63,22 @@ public class BarbarianActions : MonoBehaviour, ICombatActions
     public void SetCurrentMember(IntVariable currentMember)
     {
         CurrentMember = currentMember;
+    }
+
+    public void PlayEffect()
+    {
+        if (player != null && effect != null)
+            player.PlayOneShot(effect);
+    }
+
+    public void PlayParticle()
+    {
+        if (meow != null)
+        {
+
+            meow.Clear();
+            meow.Stop();
+            meow.Play();
+        }
     }
 }

@@ -18,7 +18,7 @@ MonoBehaviour:
     ConstantValue: 1
     Variable: {fileID: 11400000, guid: 4c2cca08c87b32f43bc9a529a0e035cb, type: 2}
   Icon: {fileID: 21300000, guid: 5b620006133a6b848bb1177e208c5c17, type: 3}
-  PartySlot: 5
+  PartySlot: 3
   Hp: {fileID: 11400000, guid: 86a4d0ffeadaeff4d97c87a4e9cea64a, type: 2}
   MaxHp:
     UseConstant: 0
