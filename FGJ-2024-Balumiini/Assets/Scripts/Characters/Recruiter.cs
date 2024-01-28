@@ -19,8 +19,13 @@ public class Recruiter : MonoBehaviour
 
     private void OnEnable()
     {
+        myActions = GetComponent<ICombatActions>();
         if (myActions != null)
+        {
+            myActions.Character.BaseStats.OnReset();
             party.Add(myActions);
+
+        }
     }
 
     private void OnDisable()

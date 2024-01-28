@@ -15,6 +15,7 @@ public class PartyAction : MonoBehaviour
 
     private void Awake()
     {
+        Party.ResetLevels();
         Party.Refresh();
     }
 

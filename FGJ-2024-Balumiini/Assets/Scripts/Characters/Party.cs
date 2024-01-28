@@ -12,6 +12,12 @@ public class Party : ScriptableObject
     /// </summary>
     public IntVariable CurrentMember;
 
+    public void ResetLevels()
+    {
+        if (Members.FirstOrDefault() != null)
+            Members.FirstOrDefault().Character.BaseStats.OnReset();
+    }
+
     public void Refresh()
     {
         CurrentMember.Value = 0;

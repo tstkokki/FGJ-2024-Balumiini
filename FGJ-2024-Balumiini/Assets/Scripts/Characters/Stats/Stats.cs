@@ -51,7 +51,7 @@ public class Stats : ScriptableObject
         Hp.Value = Mathf.Min(LevelledMaxHp, Hp.Value);
     }
 
-    private void OnReset()
+    public void OnReset()
     {
         if (Level.Variable != null)
             Level.Variable.Value = Level.ConstantValue;

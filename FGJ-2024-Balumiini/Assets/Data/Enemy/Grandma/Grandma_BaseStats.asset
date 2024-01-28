@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 480954a3b69654a4da8a9466a88d6aaf, type: 3}
-  m_Name: Grandpa_BaseStats
+  m_Name: Grandma_BaseStats
   m_EditorClassIdentifier: 
   Name: Grandma
   Level:

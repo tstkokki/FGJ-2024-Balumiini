@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95b2ed1abe6fa6149a35bcd1cdc0fdb4, type: 3}
-  m_Name: Grandpa_Combat
+  m_Name: Grandma_Combat
   m_EditorClassIdentifier: 
-  BaseStats: {fileID: 11400000, guid: 8f525023739da474484d671c5427ac23, type: 2}
+  BaseStats: {fileID: 11400000, guid: 1b554612025e84a409d7d119c4184f8d, type: 2}
   PrimaryActionMultiplier:
     UseConstant: 1
     ConstantValue: 1

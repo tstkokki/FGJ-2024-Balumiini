@@ -10,6 +10,10 @@ public class EndBattle : MonoBehaviour
     [SerializeField]
     BattleState EndOfBattleState;
 
+    
+    [SerializeField]
+    BattleState PlayerPhase;
+
 
     public void EndOfBattle()
     {
@@ -17,6 +21,14 @@ public class EndBattle : MonoBehaviour
             BattleRecord.CurrentState = EndOfBattleState;
         var pc = PlayersQueue.Dequeue();
         pc.SetActive(true);
+        StartCoroutine(SetToPlayer());
+    }
+
+    IEnumerator SetToPlayer()
+    {
+        yield return new WaitForSeconds(1f);
+        BattleRecord.CurrentState = PlayerPhase;
+
     }
 
     public List<GameObject> Players = new();

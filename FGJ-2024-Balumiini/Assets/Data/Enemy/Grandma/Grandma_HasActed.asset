@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e3146f3dc88b7449cee0e114e3e585, type: 3}
-  m_Name: Grandma_Hp
+  m_Script: {fileID: 11500000, guid: 1860f86348025db47938052e4c8ec714, type: 3}
+  m_Name: Grandma_HasActed
   m_EditorClassIdentifier: 
-  Value: 6
+  Value: 0

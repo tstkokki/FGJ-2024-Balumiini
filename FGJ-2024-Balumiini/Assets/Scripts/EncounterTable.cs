@@ -15,6 +15,7 @@ public class EncounterTable : MonoBehaviour
         {
             for (int i = 0; i < Enemies.Count; i++)
             {
+
                 EnemiesQueue.Enqueue(Enemies[i]);
             }
             NextEncounter();
@@ -23,6 +24,12 @@ public class EncounterTable : MonoBehaviour
 
     public void NextEncounter()
     {
+        StartCoroutine(NextEnemyDelay());
+    }
+
+    IEnumerator NextEnemyDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
         var enemy = EnemiesQueue.Dequeue();
         if (enemy != null)
         {
