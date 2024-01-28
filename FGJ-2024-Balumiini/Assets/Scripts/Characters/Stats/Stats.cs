@@ -7,6 +7,8 @@ public class Stats : ScriptableObject
 {
     public string Name;
     public IntReference Level;
+    public Sprite Icon;
+    public int PartySlot;
     [Space]
     public IntVariable Hp;
     public IntReference MaxHp;

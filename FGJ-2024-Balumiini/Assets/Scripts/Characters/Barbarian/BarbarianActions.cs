@@ -15,11 +15,17 @@ public class BarbarianActions : MonoBehaviour, ICombatActions
     BooleanVariable hasActed;
     public bool HasActed { get => hasActed.Value; set => hasActed.Value = value; }
 
+    public CombatStats Character => combatStats;
+
+    IntVariable CurrentMember { get; set; }
+
     private void Start()
     {
-        myMovement= GetComponent<CharacterMovement>();
-        primaryAttack= GetComponentInChildren<MeleeAttack>();
+        myMovement = GetComponent<CharacterMovement>();
+        primaryAttack = GetComponentInChildren<MeleeAttack>();
         returnBack = GetComponent<Return>();
+        primaryAttack.Me = combatStats;
+        myMovement.Me = this;
     }
 
     public void PrimaryAction(ActionList actions)
@@ -40,4 +46,8 @@ public class BarbarianActions : MonoBehaviour, ICombatActions
         throw new System.NotImplementedException();
     }
 
+    public void SetCurrentMember(IntVariable currentMember)
+    {
+        CurrentMember = currentMember;
+    }
 }

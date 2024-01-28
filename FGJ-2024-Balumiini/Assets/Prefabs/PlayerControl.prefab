@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2877482307746249358}
   - component: {fileID: 1482812829394429711}
   - component: {fileID: 6367608322006663077}
+  - component: {fileID: 1959785366038832111}
   m_Layer: 0
   m_Name: PlayerControl
   m_TagString: Untagged
@@ -269,6 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExecuteTurn: {fileID: 11400000, guid: 3a82c9167d83f2144a234bc5515f5bea, type: 2}
+  BattleRecord: {fileID: 11400000, guid: 558c69299193b4d40aa325ef97698624, type: 2}
+  PlayerPhase: {fileID: 11400000, guid: 4a73d3a34e34bf54fac01dc4584ff185, type: 2}
 --- !u!114 &6367608322006663077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,5 +284,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1c04f6eabdc2c40bce14ab158cc896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  party: {fileID: 11400000, guid: a253a6f0c1111b84db806c6914c0058f, type: 2}
-  actions: {fileID: 11400000, guid: 6fe387ba6668808488e851df28359c3d, type: 2}
+  Party: {fileID: 11400000, guid: a253a6f0c1111b84db806c6914c0058f, type: 2}
+  Actions: {fileID: 11400000, guid: 6fe387ba6668808488e851df28359c3d, type: 2}
+--- !u!114 &1959785366038832111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2733504204848015068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968d833a3fa80b14c994643522deeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6367608322006663077}
+        m_TargetAssemblyTypeName: PartyAction, Assembly-CSharp
+        m_MethodName: ResetTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameEvent: {fileID: 11400000, guid: 5d8012c4fc8531c47801d602232f5a1f, type: 2}

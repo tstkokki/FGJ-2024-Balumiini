@@ -17,6 +17,7 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 1
     Variable: {fileID: 11400000, guid: 4c2cca08c87b32f43bc9a529a0e035cb, type: 2}
+  Icon: {fileID: 21300000, guid: 4775db7b64398ee41835582fe929a599, type: 3}
   Hp: {fileID: 11400000, guid: 6784570659e8f73449fd29c48f168874, type: 2}
   MaxHp:
     UseConstant: 0

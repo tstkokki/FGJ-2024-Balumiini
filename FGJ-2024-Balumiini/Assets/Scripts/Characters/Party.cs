@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Party", menuName = "Custom/Party")]
 public class Party : ScriptableObject
 {
     public List<ICombatActions> Members = new();
-    [SerializeField]
-    IntVariable CurrentMember;
+    /// <summary>
+    /// Index of current party member
+    /// </summary>
+    public IntVariable CurrentMember;
 
     public void Refresh()
     {
@@ -18,6 +21,9 @@ public class Party : ScriptableObject
         }
     }
 
+    /// <summary>
+    /// Gets the current party member
+    /// </summary>
     public ICombatActions Current
     {
         get { return Members[CurrentMember.Value]; }
@@ -49,7 +55,8 @@ public class Party : ScriptableObject
         if (!Members.Contains(member))
         {
             Members.Add(member);
-
+            member.SetCurrentMember(CurrentMember);
+            Members = Members.OrderBy(p => p.Character.BaseStats.PartySlot).ToList();
         }
     }
 
@@ -58,6 +65,7 @@ public class Party : ScriptableObject
         if (Members.Contains(member))
         {
             Members.Remove(member);
+            Members = Members.OrderBy(p => p.Character.BaseStats.PartySlot).ToList();
         }
     }
 }
