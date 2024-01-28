@@ -39,10 +39,16 @@ public class Stats : ScriptableObject
     public void LevelUp()
     {
         Level.Variable.Value += 1;
-        Hp.Value += HpGrowth.Value;
+        RefillHp();
         //MaxHp.Variable.Value += HpGrowth.Value;
         //Atk.Variable.Value += AtkGrowth.Value;
         //Def.Variable.Value += DefGrowth.Value;
+    }
+
+    public void RefillHp()
+    {
+        Hp.Value += (HpGrowth.Value*Level.Value);
+        Hp.Value = Mathf.Min(LevelledMaxHp, Hp.Value);
     }
 
     private void OnReset()

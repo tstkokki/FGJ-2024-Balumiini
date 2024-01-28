@@ -7,11 +7,15 @@ public class DealDamage : ScriptableObject, ICombatRound
 {
     [SerializeField]
     GameEvent UpdateUI;
+
+    [SerializeField]
+    GameEvent CheckPartyWipe;
     public void HandlePrimary(CombatStats attacker, CombatStats defender)
     {
         var dmg = Mathf.Max(0, attacker.PrimaryAttack() - defender.BaseStats.LevelledDef);
         defender.BaseStats.TakeDamage(dmg);
         UpdateUI.Raise();
+        CheckPartyWipe.Raise();
     }
 
     public void HandleSecondary(CombatStats attacker, CombatStats defender)
@@ -19,6 +23,7 @@ public class DealDamage : ScriptableObject, ICombatRound
         var dmg = Mathf.Max(0, attacker.SecondaryAttack() - defender.BaseStats.LevelledDef);
         defender.BaseStats.TakeDamage(dmg);
         UpdateUI.Raise();
+        CheckPartyWipe.Raise();
         
     }
 

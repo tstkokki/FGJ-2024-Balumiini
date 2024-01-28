@@ -5,7 +5,7 @@ using UnityEngine;
 public class PartyAction : MonoBehaviour
 {
     [SerializeField]
-    Party Party;
+    public Party Party;
 
     [SerializeField]
     ActionList Actions;
@@ -21,6 +21,22 @@ public class PartyAction : MonoBehaviour
     public void ResetTurn()
     {
         Party.Refresh();
+    }
+
+    public void Levelup()
+    {
+        for (int i = 0; i < Party.Members.Count; i++)
+        {
+            if(i == 0)
+            {
+                Party.Members[i].Character.BaseStats.LevelUp();
+            }
+            else
+            {
+                Party.Members[i].Character.BaseStats.RefillHp();
+
+            }
+        }
     }
 
     public bool AllActed()
@@ -50,7 +66,7 @@ public class PartyAction : MonoBehaviour
     {
         if (Party != null)
         {
-            if (!Party.Current.HasActed)
+            if (!Party.Current.HasActed && Party.Current.Character.BaseStats.Hp.Value > 0)
             {
                 Party.Current.PrimaryAction(Actions);
                 SelectNext();

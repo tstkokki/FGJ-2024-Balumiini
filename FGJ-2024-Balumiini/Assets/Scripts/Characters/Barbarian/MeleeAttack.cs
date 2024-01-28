@@ -59,7 +59,6 @@ public class MeleeAttack : MonoBehaviour, ITurnAction, ISoundEffect
             return;
         }
         dealDamage.HandlePrimary(Me, TargetParty.Current.Character);
-        CheckPartyWipe.Raise();
     }
 
     public void Finished()
