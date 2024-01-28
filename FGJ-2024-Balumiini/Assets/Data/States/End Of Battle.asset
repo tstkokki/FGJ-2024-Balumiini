@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec40bc96413931c46b44216164c905cb, type: 3}
-  m_Name: EnemyPhase
+  m_Name: End Of Battle
   m_EditorClassIdentifier: 
