@@ -15,6 +15,7 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
     BattleRecord BattleRecord;
     [SerializeField]
     BattleState PlayerPhase;
+    bool canAct;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +33,21 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
             Debug.Log("Primary pressed");
             party.AddToTurn();
             if (party.AllActed())
-                ExecuteTurn.Raise();
+            {
+                EndTurn();
+            }
         }
+    }
+
+    private void EndTurn()
+    {
+        canAct = false;
+        ExecuteTurn.Raise();
     }
 
     private bool PressedDuringPlayerPhase(InputAction.CallbackContext ctx)
     {
-        return BattleRecord.CurrentState == PlayerPhase && ctx.PressPerformed();
+        return canAct && BattleRecord.CurrentState == PlayerPhase && ctx.PressPerformed();
     }
 
     public void OnSecondary(InputAction.CallbackContext ctx)
@@ -54,7 +63,7 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
         if (PressedDuringPlayerPhase(ctx))
         {
             party.AutoAttack();
-            ExecuteTurn.Raise();
+            EndTurn();
         }
     }
 
@@ -142,6 +151,10 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
         }
     }
 
+    public void CanActAgain()
+    {
+        canAct = true;
+    }
 
 
 }

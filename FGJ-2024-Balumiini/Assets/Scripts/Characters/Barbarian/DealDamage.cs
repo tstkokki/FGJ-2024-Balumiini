@@ -13,7 +13,7 @@ public class DealDamage : ScriptableObject, ICombatRound
     public void HandlePrimary(CombatStats attacker, CombatStats defender)
     {
         var atk = attacker.PrimaryAttack();
-        if (attacker.AttackConditions.Count > 0)
+        if (attacker.AttackConditions != null && attacker.AttackConditions.Count > 0 && defender != null)
         {
             for (int i = 0; i < attacker.AttackConditions.Count; i++)
             {

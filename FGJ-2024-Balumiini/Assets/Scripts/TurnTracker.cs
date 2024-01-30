@@ -59,6 +59,8 @@ public class TurnTracker : MonoBehaviour
         // Execute each action in the list
         foreach (var action in actions.List)
         {
+            if (action == null)
+                break;
             // Perform the action
             action.Execute();
 

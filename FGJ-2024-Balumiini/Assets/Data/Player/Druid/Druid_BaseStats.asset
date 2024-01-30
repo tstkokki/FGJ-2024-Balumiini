@@ -22,7 +22,7 @@ MonoBehaviour:
   Hp: {fileID: 11400000, guid: 4a01dd06dc8f75240bcbb205000d403c, type: 2}
   MaxHp:
     UseConstant: 0
-    ConstantValue: 3
+    ConstantValue: 8
     Variable: {fileID: 11400000, guid: 6686e9951cfdbda4e8d98c293e25cee8, type: 2}
   Atk:
     UseConstant: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   AtkGrowth:
     UseConstant: 0
     ConstantValue: 1
-    Variable: {fileID: 11400000, guid: c5d9a03db701bae498822182aac54c4e, type: 2}
+    Variable: {fileID: 11400000, guid: eab64893b3459ca499c1ab2c0b94e344, type: 2}
   DefGrowth:
     UseConstant: 0
     ConstantValue: 1

@@ -21,3 +21,4 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 1
     Variable: {fileID: 11400000, guid: 71e230341822bd14b9c0cbde189b57e7, type: 2}
+  AttackConditions: []

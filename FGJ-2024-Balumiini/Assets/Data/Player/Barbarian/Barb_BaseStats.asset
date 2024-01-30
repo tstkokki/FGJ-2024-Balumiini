@@ -35,7 +35,7 @@ MonoBehaviour:
   HpGrowth:
     UseConstant: 0
     ConstantValue: 4
-    Variable: {fileID: 11400000, guid: b0e687dec6729df47ae5af5bf1bd0857, type: 2}
+    Variable: {fileID: 11400000, guid: eab64893b3459ca499c1ab2c0b94e344, type: 2}
   AtkGrowth:
     UseConstant: 0
     ConstantValue: 1

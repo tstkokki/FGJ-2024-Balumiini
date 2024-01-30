@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Combat Stats", menuName = "Custom/Stats/Combat")]
 public class CombatStats : ScriptableObject
 {
-    
+
     public Stats BaseStats;
 
     [Space]
@@ -21,7 +21,7 @@ public class CombatStats : ScriptableObject
     public int PrimaryAttack()
     {
         var atk = BaseStats.LevelledAtk;
-        if(StatusConditions.Count > 0)
+        if (StatusConditions != null && StatusConditions.Count > 0)
         {
             for (int i = 0; i < StatusConditions.Count; i++)
             {
@@ -35,7 +35,7 @@ public class CombatStats : ScriptableObject
     public int TotalDefense()
     {
         var def = BaseStats.LevelledDef;
-        if (StatusConditions.Count > 0)
+        if (StatusConditions != null && StatusConditions.Count > 0)
         {
             for (int i = 0; i < StatusConditions.Count; i++)
             {
@@ -53,17 +53,20 @@ public class CombatStats : ScriptableObject
 
     public bool IsAlive
     {
-        get => BaseStats.Hp.Value> 0;
+        get => BaseStats.Hp.Value > 0;
     }
 
     public void InflictStatus(StatusEffect status)
     {
-        if(!StatusConditions.Contains(status))
+        if (StatusConditions == null)
+            StatusConditions = new();
+        if (!StatusConditions.Contains(status))
             StatusConditions.Add(status);
     }
 
     public void ClearStatuses()
     {
-        StatusConditions.Clear();
+        if (StatusConditions != null && StatusConditions.Count > 0)
+            StatusConditions.Clear();
     }
 }

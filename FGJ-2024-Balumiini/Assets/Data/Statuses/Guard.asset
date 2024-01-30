@@ -15,4 +15,4 @@ MonoBehaviour:
   StatusName: Guard
   atkEffect: 0
   defEffect: 4
-  statusType: {fileID: 0}
+  statusType: {fileID: 11400000, guid: 3df1b40e7786ebd4eb2ac61e1204dc89, type: 2}

@@ -16,19 +16,24 @@ public class TakeDmgObserver : MonoBehaviour
     {
         MyActions = GetComponent<ICombatActions>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-        observer = new IntReactiveProperty(MyActions.Character.BaseStats.Hp.Value);
-        previousHp = MyActions.Character.BaseStats.Hp.Value;
-        observer
-            .ObserveEveryValueChanged(v => MyActions.Character.BaseStats.Hp.Value)
-            .TakeUntilDisable(gameObject)
-            .Subscribe(s =>
-            {
-                StartCoroutine(ColorSwapper());
-            });
+        if (MyActions != null && sprite != null)
+        {
+
+            observer = new IntReactiveProperty(MyActions.Character.BaseStats.Hp.Value);
+            previousHp = MyActions.Character.BaseStats.Hp.Value;
+            observer
+                .ObserveEveryValueChanged(v => MyActions.Character.BaseStats.Hp.Value)
+                .TakeUntilDisable(gameObject)
+                .Subscribe(s =>
+                {
+                    StartCoroutine(ColorSwapper());
+                });
+        }
     }
     WaitForSeconds blinkDelay = new WaitForSeconds(0.2f);
     IEnumerator ColorSwapper()
     {
+
         if (MyActions.Character.BaseStats.Hp.Value < previousHp)
             sprite.color = Color.red;
         else

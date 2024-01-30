@@ -79,6 +79,7 @@ public class PartyAction : MonoBehaviour
     {
         if(Party != null)
         {
+            Debug.Log(Party.Members.Count);
             foreach (var member in Party.Members)
             {
                 if(!member.HasActed && member.Character.IsAlive)

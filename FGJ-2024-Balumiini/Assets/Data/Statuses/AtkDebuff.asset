@@ -15,4 +15,4 @@ MonoBehaviour:
   StatusName: Atk debuff
   atkEffect: -4
   defEffect: 0
-  statusType: {fileID: 0}
+  statusType: {fileID: 11400000, guid: 2e79bf71496e8b04e8dd6c1cd04e958d, type: 2}

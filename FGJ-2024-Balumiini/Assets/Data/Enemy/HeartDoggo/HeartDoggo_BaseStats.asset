@@ -22,15 +22,15 @@ MonoBehaviour:
   Hp: {fileID: 11400000, guid: 5abf6a505e978344ab580671431ac246, type: 2}
   MaxHp:
     UseConstant: 1
-    ConstantValue: 90
+    ConstantValue: 70
     Variable: {fileID: 0}
   Atk:
     UseConstant: 1
-    ConstantValue: 9
+    ConstantValue: 2
     Variable: {fileID: 0}
   Def:
     UseConstant: 1
-    ConstantValue: 5
+    ConstantValue: 2
     Variable: {fileID: 0}
   HpGrowth:
     UseConstant: 1

@@ -42,7 +42,9 @@ public class CurrentPartyUIObserver : MonoBehaviour
     {
         if (Party.Members.Count > 0)
         {
-
+            var current = Party.Current;
+            if (current == null)
+                return;
             var member = Party.Current.Character;
             Stats baseStats = member.BaseStats;
             if (Icon != null && baseStats.Icon != null)
@@ -53,8 +55,8 @@ public class CurrentPartyUIObserver : MonoBehaviour
                 Icon.sprite= null;
             Hp.text = $"{baseStats.Hp.Value}/{baseStats.LevelledMaxHp}";
             Stats.text = $"Atk: {baseStats.LevelledAtk} " +
-                $"({(member.PrimaryAttack() - baseStats.LevelledAtk >= 0 ? "+" : "-")}{member.PrimaryAttack() - baseStats.LevelledAtk}" +
-                $"/{(member.SecondaryAttack() - baseStats.LevelledAtk >= 0 ? "+" : "-")}{member.SecondaryAttack() - baseStats.LevelledAtk})\nDef: {baseStats.LevelledDef}";
+                $"({(member.PrimaryAttack() - baseStats.LevelledAtk >= 0 ? "+" : "")}{member.PrimaryAttack() - baseStats.LevelledAtk}" +
+                $"/{(member.SecondaryAttack() - baseStats.LevelledAtk >= 0 ? "+" : "")}{member.SecondaryAttack() - baseStats.LevelledAtk})\nDef: {baseStats.LevelledDef}";
 
             HpFill.fillAmount = (float)baseStats.Hp.Value / baseStats.LevelledMaxHp;
         }

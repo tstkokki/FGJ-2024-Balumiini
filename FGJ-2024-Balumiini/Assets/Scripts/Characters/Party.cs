@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Party", menuName = "Custom/Party")]
@@ -34,6 +35,10 @@ public class Party : ScriptableObject
     {
         get
         {
+            if (Members.Count == 0) return null;
+            if (CurrentMember.Value >= Members.Count)
+                return null;
+            
             var current = Members[CurrentMember.Value];
             if (current == null || !current.Character.IsAlive)
             {
