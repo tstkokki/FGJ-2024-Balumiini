@@ -53,10 +53,9 @@ public class Stats : ScriptableObject
 
     public void OnReset()
     {
-        if (Level.Variable != null)
-            Level.Variable.Value = Level.ConstantValue;
+        
         if (Hp != null)
-            Hp.Value = MaxHp.ConstantValue;
+            Hp.Value = LevelledMaxHp;
         //if (MaxHp != null)
         //    MaxHp.Variable.Value = MaxHp.ConstantValue;
         //if (Atk != null)

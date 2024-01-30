@@ -13,6 +13,9 @@ public class TurnTracker : MonoBehaviour
     [SerializeField]
     GameEvent RefreshParty;
 
+    [SerializeField]
+    GameEvent UpdateUI;
+
     [Space]
     [SerializeField]
     BattleRecord BattleRecord;
@@ -58,6 +61,7 @@ public class TurnTracker : MonoBehaviour
         {
             // Perform the action
             action.Execute();
+
 
             // Wait for the action to finish before moving to the next one
             yield return new WaitUntil(() => action.IsDone);

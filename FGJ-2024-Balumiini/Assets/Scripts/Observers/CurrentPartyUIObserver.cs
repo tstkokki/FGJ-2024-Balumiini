@@ -43,15 +43,20 @@ public class CurrentPartyUIObserver : MonoBehaviour
         if (Party.Members.Count > 0)
         {
 
-            var member = Party.Current.Character.BaseStats;
-            if (Icon != null && member.Icon != null)
+            var member = Party.Current.Character;
+            Stats baseStats = member.BaseStats;
+            if (Icon != null && baseStats.Icon != null)
             {
-                Icon.sprite = member.Icon;
+                Icon.sprite = baseStats.Icon;
             }
-            Hp.text = $"{member.Hp.Value}/{member.LevelledMaxHp}";
-            Stats.text = $"Atk: {member.LevelledAtk}\nDef: {member.LevelledDef}";
+            else
+                Icon.sprite= null;
+            Hp.text = $"{baseStats.Hp.Value}/{baseStats.LevelledMaxHp}";
+            Stats.text = $"Atk: {baseStats.LevelledAtk} " +
+                $"({(member.PrimaryAttack() - baseStats.LevelledAtk >= 0 ? "+" : "-")}{member.PrimaryAttack() - baseStats.LevelledAtk}" +
+                $"/{(member.SecondaryAttack() - baseStats.LevelledAtk >= 0 ? "+" : "-")}{member.SecondaryAttack() - baseStats.LevelledAtk})\nDef: {baseStats.LevelledDef}";
 
-            HpFill.fillAmount = (float)member.Hp.Value / member.LevelledMaxHp;
+            HpFill.fillAmount = (float)baseStats.Hp.Value / baseStats.LevelledMaxHp;
         }
     }
 }

@@ -35,18 +35,22 @@ public class BarbarianActions : MonoBehaviour, ICombatActions, ISoundEffect
         myMovement = GetComponent<CharacterMovement>();
         primaryAttack = GetComponentInChildren<MeleeAttack>();
         returnBack = GetComponent<Return>();
-        primaryAttack.Me = combatStats;
-        myMovement.Me = this;
+        if (primaryAttack != null)
+            primaryAttack.Me = combatStats;
+        if (myMovement != null)
+            myMovement.Me = this;
     }
 
     public void PrimaryAction(ActionList actions)
     {
         PlayParticle();
         PlayEffect();
-
-        actions.Add(myMovement);
-        actions.Add(primaryAttack);
-        actions.Add(returnBack);
+        if (myMovement != null)
+            actions.Add(myMovement);
+        if (primaryAttack != null)
+            actions.Add(primaryAttack);
+        if (returnBack != null)
+            actions.Add(returnBack);
         HasActed = true;
     }
 

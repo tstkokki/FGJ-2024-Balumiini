@@ -15,7 +15,7 @@ public class Party : ScriptableObject
     public void ResetLevels()
     {
         if (Members.FirstOrDefault() != null)
-            Members.FirstOrDefault().Character.BaseStats.OnReset();
+            Members.FirstOrDefault().Character.BaseStats.Level.Variable.Value = 1;
     }
 
     public void Refresh()
@@ -32,7 +32,20 @@ public class Party : ScriptableObject
     /// </summary>
     public ICombatActions Current
     {
-        get { return Members[CurrentMember.Value]; }
+        get
+        {
+            var current = Members[CurrentMember.Value];
+            if (current == null || !current.Character.IsAlive)
+            {
+                for (int i = 0; i < Members.Count; i++)
+                {
+                    current= Members[i];
+                    if (current.Character.IsAlive)
+                        break;
+                }
+            }
+            return current;
+        }
     }
 
     private void OnEnable()

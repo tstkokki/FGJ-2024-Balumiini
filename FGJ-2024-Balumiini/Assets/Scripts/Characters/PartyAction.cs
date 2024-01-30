@@ -75,6 +75,18 @@ public class PartyAction : MonoBehaviour
         }
     }
 
+    public void AutoAttack()
+    {
+        if(Party != null)
+        {
+            foreach (var member in Party.Members)
+            {
+                if(!member.HasActed && member.Character.IsAlive)
+                    member.PrimaryAction(Actions);
+            }
+        }
+    }
+
     public void SelectPrevious()
     {
         Party.Previous();

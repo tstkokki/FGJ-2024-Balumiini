@@ -10,12 +10,7 @@ public class Recruiter : MonoBehaviour
     [SerializeField]
     Party party;
     // Start is called before the first frame update
-    void Start()
-    {
-        myActions = GetComponent<ICombatActions>();
-        if (myActions != null)
-            party.Add(myActions);
-    }
+    
 
     private void OnEnable()
     {

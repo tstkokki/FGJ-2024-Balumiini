@@ -14,19 +14,28 @@ public class EndBattle : MonoBehaviour
     [SerializeField]
     BattleState PlayerPhase;
 
+    [SerializeField]
+    GameEvent LevelUp;
 
     public void EndOfBattle()
     {
         if (BattleRecord != null)
+        {
             BattleRecord.CurrentState = EndOfBattleState;
-        var pc = PlayersQueue.Dequeue();
-        pc.SetActive(true);
+            LevelUp.Raise();
+
+        }
         StartCoroutine(SetToPlayer());
     }
 
     IEnumerator SetToPlayer()
     {
         yield return new WaitForSeconds(1f);
+        var pc = PlayersQueue.Dequeue();
+        pc.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
         BattleRecord.CurrentState = PlayerPhase;
 
     }

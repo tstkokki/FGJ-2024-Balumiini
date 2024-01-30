@@ -53,6 +53,7 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
     {
         if (PressedDuringPlayerPhase(ctx))
         {
+            party.AutoAttack();
             ExecuteTurn.Raise();
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EncounterTable : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class EncounterTable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(Enemies.Count > 0)
+        if (Enemies.Count > 0)
         {
             for (int i = 0; i < Enemies.Count; i++)
             {
@@ -24,16 +25,24 @@ public class EncounterTable : MonoBehaviour
 
     public void NextEncounter()
     {
+        if (EnemiesQueue.Count == 0)
+            SceneManager.LoadScene(2);
+        else
         StartCoroutine(NextEnemyDelay());
     }
 
     IEnumerator NextEnemyDelay()
     {
         yield return new WaitForSeconds(0.5f);
-        var enemy = EnemiesQueue.Dequeue();
-        if (enemy != null)
+
+        if (EnemiesQueue.Count > 0)
         {
-            enemy.SetActive(true);
+
+            var enemy = EnemiesQueue.Dequeue();
+            if (enemy != null)
+            {
+                enemy.SetActive(true);
+            }
         }
     }
 }

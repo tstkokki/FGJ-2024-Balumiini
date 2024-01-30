@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdfaf141a77621b4f815e6c5b4cbb61d, type: 3}
   m_Name: BattleRecord
   m_EditorClassIdentifier: 
-  CurrentState: {fileID: 0}
+  CurrentState: {fileID: 11400000, guid: 4a73d3a34e34bf54fac01dc4584ff185, type: 2}
   Turn: 0

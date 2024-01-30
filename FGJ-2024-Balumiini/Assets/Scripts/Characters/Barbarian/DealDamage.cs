@@ -12,7 +12,17 @@ public class DealDamage : ScriptableObject, ICombatRound
     GameEvent CheckPartyWipe;
     public void HandlePrimary(CombatStats attacker, CombatStats defender)
     {
-        var dmg = Mathf.Max(0, attacker.PrimaryAttack() - defender.BaseStats.LevelledDef);
+        var atk = attacker.PrimaryAttack();
+        if (attacker.AttackConditions.Count > 0)
+        {
+            for (int i = 0; i < attacker.AttackConditions.Count; i++)
+            {
+                atk = attacker.AttackConditions[i].TrueDamage(attacker, atk, defender);
+            }
+        }
+        var def = defender.TotalDefense();
+
+        var dmg = Mathf.Max(1, atk - def);
         defender.BaseStats.TakeDamage(dmg);
         UpdateUI.Raise();
         CheckPartyWipe.Raise();
@@ -24,7 +34,7 @@ public class DealDamage : ScriptableObject, ICombatRound
         defender.BaseStats.TakeDamage(dmg);
         UpdateUI.Raise();
         CheckPartyWipe.Raise();
-        
+
     }
 
 }
