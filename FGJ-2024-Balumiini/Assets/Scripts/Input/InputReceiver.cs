@@ -15,7 +15,7 @@ public class InputReceiver : MonoBehaviour, IInputReceiver
     BattleRecord BattleRecord;
     [SerializeField]
     BattleState PlayerPhase;
-    bool canAct;
+    bool canAct = true;
     // Start is called before the first frame update
     void Start()
     {
